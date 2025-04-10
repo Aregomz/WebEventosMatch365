@@ -24,7 +24,7 @@ function App() {
 
     try {
       const response = await axios.post('http://localhost:3000/eventos', form)
-      alert('✅ Evento creado con éxito: ID ' + response.data.data.id)
+      alert('✅ Partido agregado: ID ' + response.data.data.id)
       setForm({
         titulo: '',
         descripcion: '',
@@ -41,14 +41,14 @@ function App() {
 
   return (
     <div style={{ maxWidth: 600, margin: '2rem auto', padding: 20 }}>
-      <h2>Crear Evento</h2>
+      <h2>Agregar Nuevo Partido</h2>
       <form onSubmit={handleSubmit}>
-        <InputField label="Título" name="titulo" value={form.titulo} onChange={handleChange} />
+        <InputField label="Partido" name="Partido" value={form.titulo} onChange={handleChange} />
         <InputField label="Descripción" name="descripcion" value={form.descripcion} onChange={handleChange} />
         <InputField label="Fecha" name="fecha" type="date" value={form.fecha} onChange={handleChange} />
         <InputField label="Lugares disponibles" name="lugares_disponibles" value={form.lugares_disponibles} onChange={handleChange} />
         <InputField label="Precio" name="precio" value={form.precio} onChange={handleChange} />
-        <InputField label="Ubicación" name="ubicacion" value={form.ubicacion} onChange={handleChange} />
+        <InputField label="Estadio" name="Estadio" value={form.ubicacion} onChange={handleChange} />
 
         <button type="submit" style={{ marginTop: 20 }}>Crear Evento</button>
       </form>
